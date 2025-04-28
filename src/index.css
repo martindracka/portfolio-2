@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: 41, 98, 255;
+  --secondary-color: 99, 102, 241;
+  --accent-color: 245, 158, 11;
+  --success-color: 78, 203, 113;
+  --warning-color: 255, 186, 73;
+  --error-color: 255, 102, 102;
+  --dark-color: 32, 35, 47;
+  --light-color: 249, 250, 255;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-sans text-base antialiased bg-light text-dark overflow-x-hidden;
+  font-feature-settings: "kern";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  @apply bg-primary/20 text-primary;
+}
+
+/* Text animations */
+.reveal-text {
+  @apply relative inline-block overflow-hidden;
+}
+
+.reveal-text span {
+  @apply block transform transition-transform;
+}
+
+.section {
+  @apply py-16 md:py-24;
+}
+
+/* For smooth page transitions */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 400ms, transform 400ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Canvas styles */
+.canvas-container {
+  @apply fixed top-0 left-0 w-full h-full pointer-events-none z-[-1];
+}
+
+.language-switch {
+  @apply relative flex items-center justify-center transition-transform duration-300 transform hover:scale-110;
+}
+
+.language-switch:before {
+  @apply absolute opacity-0 content-[''] -z-10 w-full h-full rounded-full
+  bg-gradient-to-r from-primary to-secondary transition-opacity duration-300;
+  filter: blur(15px);
+}
+
+.language-switch:hover:before {
+  @apply opacity-40;
+}
+
+.language-text {
+  @apply transition-colors duration-300;
+}
+
+.active-language {
+  @apply text-primary font-medium;
+}
+
+/* Project card perspective effect */
+.project-card {
+  @apply relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-500;
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+}
+
+.project-card-content {
+  @apply relative z-10 transition-transform duration-700;
+  transform-style: preserve-3d;
+}
+
+.project-image-container {
+  @apply relative overflow-hidden h-64;
+}
+
+.project-image {
+  @apply w-full h-full object-cover transition-all duration-700;
+}
+
+.project-card:hover .project-image {
+  @apply scale-105;
+}
+
+@media (prefers-reduced-motion) {
+  .reveal-text span,
+  .page-transition-enter,
+  .page-transition-enter-active,
+  .page-transition-exit,
+  .page-transition-exit-active {
+    transition: none !important;
+    transform: none !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
