@@ -63,17 +63,17 @@ export default {
       },
       {
         title: 'Sunset Cinema',
-        description: 'We developed a concept for a summer cinema event in Esbjerg, aimed at creating a relaxed and social outdoor film experience.',
+        description: 'We developed a concept for a summer cinema event in Esbjerg, aimed at creating a relaxed and social outdoor film experience  for the community.',
         category: 'Public Event',
       },
       {
         title: 'Mobile App (Budget Traveller) UI Design',
-        description: 'Designed the user interface and optimized the user experience for a budget travel mobile app, ensuring intuitive navigation and accessibility.',
+        description: 'Designed the user interface and optimized the user experience for a budget travel mobile app, ensuring intuitive navigation and accessibility for users on the go and esentially for budget travelers',
         category: 'UI/UX Design',
       },
       {
         title: 'Motion Graphics Showreel',
-        description: 'A collection of motion graphics work demonstrating various techniques and styles.',
+        description: 'A collection of motion graphics work demonstrating various techniques and styles, showcasing my skills in animation and visual storytelling for different projects and clients in the multimedia design field and beyond it as well.',    
         category: 'Motion Graphics',
       }
     ]
